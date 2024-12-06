@@ -44,6 +44,7 @@ def main(filename):
                 count += dfs(adjacency_list, pages[i], pages[j], vis, memo)
             new_order[count] = pages[i]
         counter += get_middle_element(new_order)
+    # Subtract Q1's answer, it's more efficient this way :P
     return counter
 
 
