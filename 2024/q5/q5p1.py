@@ -18,7 +18,7 @@ def dfs(adjacency_list, cur, end, vis):
 def main(filename):
     counter, lines_processed = 0, 0
     adjacency_list = defaultdict(list)
-    with open(f"data/{filename}") as file:
+    with open(f"../data/{filename}") as file:
         lines = file.readlines()
     for line in lines:
         line = line.strip()

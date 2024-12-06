@@ -31,7 +31,7 @@ def calculate_sum(line, order) -> int:
     return total_sum
 
 def main(filename):
-    with open(f"data/{filename}") as f:
+    with open(f"../data/{filename}") as f:
         order = ['m', 'u', 'l', '(', ',']
         total_sum = sum(calculate_sum(line, order) for line in f)
     return total_sum

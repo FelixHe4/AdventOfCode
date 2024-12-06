@@ -8,18 +8,12 @@ def determine_safe(first: int, second: int, is_ascending: bool) -> bool:
 
 def main(filename):
     count = 0
-    with open(f"data/{filename}") as file:
+    with open(f"../data/{filename}") as file:
         lines = file.readlines()
     for line in lines:
         numbers = list(map(int, line.split()))
-        for i in range(len(numbers)):
-            new_numbers = numbers[:i] + numbers[i + 1:]
-            if new_numbers[0] == new_numbers[1]:
-                continue
-            is_ascending = new_numbers[0] > new_numbers[1]
-            all_safe = all(determine_safe(new_numbers[j], new_numbers[j + 1], is_ascending) for j in range(len(new_numbers) - 1))
-            print(all_safe)
-            count += 1 if all_safe else 0
+        all_safe = all(determine_safe(numbers[i], numbers[i + 1], numbers[0] < numbers[1]) for i in range(len(numbers) - 1))
+        count += all_safe
     return count
 
 

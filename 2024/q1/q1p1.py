@@ -1,5 +1,5 @@
 def main(filename):
-    with open(f"data/{filename}") as lines:
+    with open(f"../data/{filename}") as lines:
         list1 = sorted([int(line.split()[0]) for line in lines])
         lines.seek(0)
         list2 = sorted([int(line.split()[1]) for line in lines])

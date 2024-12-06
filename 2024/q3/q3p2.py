@@ -31,7 +31,7 @@ def calculate_sum(line, order) -> int:
     return total_sum
 
 def main(filename):
-    with open(f"data/{filename}") as f:
+    with open(f"../data/{filename}") as f:
         order = ['m', 'u', 'l', '(', ',']
         lines = ('TEST_START' + f.read().replace('don\'t()', 'TEST_END').replace('do()', 'TEST_START')).split("TEST_")
         total_sum = sum(calculate_sum(line, order) for line in lines if line.startswith("START"))

@@ -16,7 +16,7 @@ def check_surrounding(grid, a_i, a_j, movement_index1, movement_index2):
 
 def main(filename):
     counter = 0
-    with open(f"data/{filename}") as file:
+    with open(f"../data/{filename}") as file:
         lines = file.readlines()
     grid = [list(line.strip()) for line in lines]
     n, m = len(grid), len(grid[0])

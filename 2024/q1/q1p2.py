@@ -1,7 +1,7 @@
 def main(filename):
     first_map, second_map = {}, {}
     total_sum = 0
-    with open(f"data/{filename}") as lines:
+    with open(f"../data/{filename}") as lines:
         for line in lines:
             first, second = map(int, line.split())
             first_map.setdefault(first, 0)

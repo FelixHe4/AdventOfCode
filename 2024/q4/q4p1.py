@@ -10,7 +10,7 @@ def is_valid(i, j, n, m):
 
 def main(filename):
     counter = 0
-    with open(f"data/{filename}") as file:
+    with open(f"../data/{filename}") as file:
         lines = file.readlines()
     grid = [list(line.strip()) for line in lines]
     n, m = len(grid), len(grid[0])
