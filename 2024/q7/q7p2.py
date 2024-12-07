@@ -7,15 +7,10 @@ def main(filename):
         lines = file.readlines()
     for line in lines:
         num, vals = line.split(": ")
-        num = int(num)
-        vals = list(map(int, vals.split()))
+        num, vals = int(num), list(map(int, vals.split()))
         lis = [vals[0]]
         for i in range(1, len(vals)):
-            new_lis = []
-            for j in range(len(lis)):
-                new_lis.append(lis[j] + vals[i])
-                new_lis.append(lis[j] * vals[i])
-                new_lis.append(int(str(lis[j]) + str(vals[i])))
+            new_lis = [y for cur in lis for y in [cur + vals[i], cur * vals[i], int(f"{cur}{vals[i]}")]]
             lis = copy.deepcopy(new_lis)
         if num in lis:
             counter += num
