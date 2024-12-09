@@ -23,8 +23,7 @@ def main(filename):
         for i in range(len(v)):
             for j in range(i + 1, len(v)):
                 first, second = v[i], v[j]
-                diff_i = first[0] - second[0]
-                diff_j = first[1] - second[1]
+                diff_i, diff_j = first[0] - second[0], first[1] - second[1]
                 if is_valid_helper(grid, diff_i + first[0], diff_j + first[1]):
                     lis.add((diff_i + first[0], diff_j + first[1]))
                 if is_valid_helper(grid, -1 * diff_i + second[0], -1 * diff_j + second[1]):

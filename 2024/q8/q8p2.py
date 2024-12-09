@@ -25,16 +25,13 @@ def main(filename):
         for i in range(len(v)):
             for j in range(i + 1, len(v)):
                 first, second = v[i], v[j]
-                diff_i = first[0] - second[0]
-                diff_j = first[1] - second[1]
+                diff_i, diff_j = first[0] - second[0], first[1] - second[1]
                 first_diff_i, first_diff_j = diff_i + first[0], diff_j + first[1]
                 second_diff_i, second_diff_j = -1 * diff_i + second[0], -1 * diff_j + second[1]
                 while is_valid_helper(grid, first_diff_i, first_diff_j):
-                    grid[first_diff_i][first_diff_j] = '#'
                     lis.add((first_diff_i, first_diff_j))
                     first_diff_i, first_diff_j = diff_i + first_diff_i, diff_j + first_diff_j
                 while is_valid_helper(grid, second_diff_i, second_diff_j):
-                    grid[second_diff_i][second_diff_j] = '#'
                     lis.add((second_diff_i, second_diff_j))
                     second_diff_i, second_diff_j = -1 * diff_i + second_diff_i, -1 * diff_j + second_diff_j
     return counter + len(lis)
