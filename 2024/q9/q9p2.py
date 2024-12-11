@@ -15,7 +15,7 @@ def find_free_space(gen_str, n, file_len):
 
 
 def main(filename):
-    with open(f"data/{filename}") as file:
+    with open(f"../data/{filename}") as file:
         line = file.readlines()[0].strip()
     gen_str, dot_count, counter = [], 0, 0
     checksum = 0
