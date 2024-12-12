@@ -18,6 +18,7 @@ def main(filename):
                 new_lis.append(str(int(prev_lis[j]) * 2024))
     return len(new_lis)
 
+
 if __name__ == '__main__':
     FILE_NAME = "data11.txt"
     print(main(FILE_NAME))
