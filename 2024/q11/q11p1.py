@@ -1,15 +1,7 @@
 import copy
 
 
-movements = [[0, 1], [0, -1], [-1, 0], [1, 0]]
-
-
-def is_valid(n, m, i, j):
-    return 0 <= i < n and 0 <= j < m
-
-
 def main(filename):
-    counter = 0
     with open(f"../data/{filename}") as file:
         lines = file.readlines()[0]
     new_lis = lines.strip().split()
